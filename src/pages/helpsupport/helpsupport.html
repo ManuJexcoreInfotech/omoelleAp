@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Help & Support</ion-title>
+
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <form   #helpSupport="ngForm">
+
+    <div class="account-info-detail-form">
+      <div class="top-contact-details text-center">
+        <!-- <img width="60px;" src="assets/img/contacticon.PNG"> -->
+        <h4>Help</h4>
+        <h5>08117777992 or 08188888271</h5>
+      </div>
+
+      <ion-list inset>
+        <h4 class="want-tohelp-head">Want to any help?</h4>
+        <h4 class="head-feilds">Enter message here</h4>
+        <ion-item class="adresss">
+          <ion-input style="height: 100px;" type="text" placeholder="Type here..." name="message" [(ngModel)]="helpdata.message" #message="ngModel" spellcheck="false" autocapitalize="off"required ></ion-input>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div class="done-btn" padding>
+      <button  block class="signin-btn" [disabled]="!helpSupport.form.valid" (click)="sendMail()" type="submit">Send</button>
+    </div>
+
+  </form>
+
+</ion-content>
