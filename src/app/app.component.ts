@@ -62,50 +62,50 @@ export class MyApp {
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public toastCtrl: ToastController, private network: Network, public events: Events, public http: Http, private alertCtrl: AlertController) {
 
-     localStorage.setItem("ItemInCart", '0');
-     localStorage.setItem('isGuestUser', '0');
+     // localStorage.setItem("ItemInCart", '0');
+     // localStorage.setItem('isGuestUser', '0');
 
-      if((localStorage.getItem('userId') === "undefined" || localStorage.getItem('userId') === null) ) {
+      // if((localStorage.getItem('userId') === "undefined" || localStorage.getItem('userId') === null) ) {
        
-        this.userId = 0;
-        this.guestUserId = localStorage.getItem('isGuestUser');
+        // this.userId = 0;
+        // this.guestUserId = localStorage.getItem('isGuestUser');
 
-      } else {
-         this.guestUserId = 0;
-         this.userId = localStorage.getItem("userId");
-         this.getAccountDetail(this.userId);
-      }
+      // } else {
+         // this.guestUserId = 0;
+         // this.userId = localStorage.getItem("userId");
+         // this.getAccountDetail(this.userId);
+      // }
 
-      if((localStorage.getItem('ItemInCart') === "undefined" || localStorage.getItem('ItemInCart') === null ||  localStorage.getItem('ItemInCart') === '' ) ) {
-             this.totalItm = 0;
-             this.events.publish('item', 0);
-          } else {
-            this.totalItm = localStorage.getItem('ItemInCart');
-            this.events.publish('item', localStorage.getItem('ItemInCart'));
-       }
-
-
-      if((localStorage.getItem('isUserHaveMerchant') == '1') ) {
-             this.HaveMerchant = 1;
-          } else {
-             this.HaveMerchant = 0;
-      }
-
-      this.events.subscribe('isMerchant', (val) => {
-        this.HaveMerchant = val;
-      });
+      // if((localStorage.getItem('ItemInCart') === "undefined" || localStorage.getItem('ItemInCart') === null ||  localStorage.getItem('ItemInCart') === '' ) ) {
+             // this.totalItm = 0;
+             // this.events.publish('item', 0);
+          // } else {
+            // this.totalItm = localStorage.getItem('ItemInCart');
+            // this.events.publish('item', localStorage.getItem('ItemInCart'));
+       // }
 
 
-      this.events.subscribe('user:created', (user, time) => {
-        // user and time are the same arguments passed in `events.publish(user, time)`
-        this.loginStatus = 1;
-        this.getcartItem(this.userId, this.guestUserId);
-        console.log('Welcome 2', user, 'at', time);
-      });
+      // if((localStorage.getItem('isUserHaveMerchant') == '1') ) {
+             // this.HaveMerchant = 1;
+          // } else {
+             // this.HaveMerchant = 0;
+      // }
+
+      // this.events.subscribe('isMerchant', (val) => {
+        // this.HaveMerchant = val;
+      // });
+
+
+      // this.events.subscribe('user:created', (user, time) => {
+       // user and time are the same arguments passed in `events.publish(user, time)`
+        // this.loginStatus = 1;
+        // this.getcartItem(this.userId, this.guestUserId);
+        // console.log('Welcome 2', user, 'at', time);
+      // });
 
 
     this.initializeApp();
-    this.ionViewDidEnter();
+    //this.ionViewDidEnter();
 
     // used for an example of ngFor and navigation
     this.pages = [
